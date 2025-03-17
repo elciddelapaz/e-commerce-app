@@ -29,8 +29,8 @@ class PaymentController extends Controller
                 $payment->user->decrement('balance', $data['amount']);
                 $payment->push();
 
-                Mail::to($user->email)->send(new OrderPaid($order));
-                return redirect()->route('order.index')->with('message', 'Order paid successfully');
+                Mail::to($user->email)->send(new OrderPaid($payment->order));
+                return redirect()->route('orders.index')->with('message', 'Order paid successfully');
             }
             else {
                 return back()->withErrors(['balance' => 'User balance is not enough!!']);
