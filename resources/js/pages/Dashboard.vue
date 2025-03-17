@@ -17,7 +17,7 @@ const breadcrumbs = [
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
-            <Link :href="route('order.create')">Create</Link>
+            <Link :href="route('orders.create')">Create</Link>
         </div>
     </AppLayout>
 </template>

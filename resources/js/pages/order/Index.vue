@@ -8,7 +8,7 @@ defineProps({ orders: Object })
 const breadcrumbs = [
     {
         title: 'Order',
-        href: route('order.index'),
+        href: route('orders.index'),
     }
 ];
 </script>
@@ -18,7 +18,7 @@ const breadcrumbs = [
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="relative min-h-[100vh] flex-1 rounded-xl border border-sidebar-border/70 dark:border-sidebar-border md:min-h-min p-4">
 
-            <Link :href="route('order.create')" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create</Link>
+            <Link :href="route('orders.create')" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create</Link>
             <div v-if="$page.props.flash.message" class="p-4 font-black text-green-500">{{ $page.props.flash.message }}</div>
             <table class="table-auto border-separate border-spacing-5">
                 <tr >
@@ -36,7 +36,7 @@ const breadcrumbs = [
                     <td>{{ order.total }}</td>
                     <td>{{ (order.is_paid == 1) ? "Paid" : "Unpaid"}}</td>
                     <td v-if="order.is_paid == 0">
-                        <Link :href="route('order.edit', order.id)"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Check out</button></Link>
+                        <Link :href="route('orders.edit', order.id)"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Check out</button></Link>
                     </td>
                 </tr>
                 <pagination class="mt-6" :links="orders.links" />

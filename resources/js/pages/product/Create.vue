@@ -6,12 +6,12 @@ import { useForm } from "@inertiajs/vue3";
 const breadcrumbs = [
     {
         title: 'Product',
-        href: route('product.index')
+        href: route('products.index')
 
     },
     {
         title: 'Create',
-        href: route('product.create')
+        href: route('products.create')
     }
 
 ];
@@ -27,7 +27,7 @@ const form = useForm({
     <AppLayout :breadcrumbs="breadcrumbs">
         <div
             class="relative min-h-[100vh] flex-1 rounded-xl border border-sidebar-border/70 dark:border-sidebar-border md:min-h-min">
-            <form class="grid p-4 gap-2" @submit.prevent="form.post(route('product.store'))">
+            <form class="grid p-4 gap-2" @submit.prevent="form.post(route('products.store'))">
                 <h1 class="text-xl font-bold">Create product:</h1>
                 <label>Product Name: </label>
                 <div v-if="form.errors.name">{{ form.errors.name }}</div>

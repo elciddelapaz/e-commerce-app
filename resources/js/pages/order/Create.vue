@@ -6,12 +6,12 @@ defineProps({products: Object});
 const breadcrumbs = [
     {
         title: 'Order',
-        href: route('order.index')
+        href: route('orders.index')
 
     },
     {
         title: 'Create',
-        href: route('order.create')
+        href: route('orders.create')
     }
 
 ];
@@ -23,7 +23,7 @@ const form = useForm({
 })
 const submit = () => {
     form.total = form.quantity * form.price;
-    form.post(route('order.store'), {
+    form.post(route('orders.store'), {
         onSuccess: () => form.reset(),
     })
 }

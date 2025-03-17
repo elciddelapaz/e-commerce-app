@@ -36,20 +36,11 @@ class OrderController extends Controller
         ]);
         $order->save();
 
-        return to_route('order.index');
+        return to_route('orders.index');
     }
 
     public function edit(Order $order)
     {
         return Inertia::render('order/Edit', ['order' => $order]);
-    }
-
-    public function update(UpdateOrderRequest $request, Order $order)
-    {
-        $data = $request->validated();
-
-        $order->update($data);
-
-        return redirect()->route('order.index')->with('message', 'Updated successfully');
     }
 }

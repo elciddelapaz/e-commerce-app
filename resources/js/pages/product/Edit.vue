@@ -7,12 +7,12 @@ const props = defineProps({product: Object});
 const breadcrumbs = [
     {
         title: 'Product',
-        href: route('product.index')
+        href: route('products.index')
 
     },
     {
         title: 'Edit',
-        href: route('product.edit', props.product.id)
+        href: route('products.edit', props.product.id)
     }
 
 ];
@@ -27,7 +27,7 @@ const form = useForm({
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="relative min-h-[100vh] flex-1 rounded-xl border border-sidebar-border/70 dark:border-sidebar-border md:min-h-min">
-            <form class="grid p-4 gap-2" @submit.prevent="form.post(route('product.update', props.product.id))">
+            <form class="grid p-4 gap-2" @submit.prevent="form.post(route('products.update', props.product.id))">
                     <label>Product Name: </label>
                     <div v-if="form.errors.name">{{ form.errors.name }}</div>
                     <input class="border" v-model="form.name" required>

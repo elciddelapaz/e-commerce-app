@@ -11,12 +11,12 @@ import AppLogo from './AppLogo.vue';
 const mainNavItems: NavItem[] = [
     {
         title: 'Order',
-        href: route('order.index'),
+        href: route('orders.index'),
         icon: Folder
     },
     {
         title: 'Product',
-        href: route('product.index'),
+        href: route('products.index'),
         icon: Folder
     }
 ];
@@ -41,7 +41,7 @@ const footerNavItems: NavItem[] = [
             <SidebarMenu>
                 <SidebarMenuItem>
                     <SidebarMenuButton size="lg" as-child>
-                        <Link :href="route('order.index')">
+                        <Link :href="route('orders.index')">
                             <AppLogo />
                         </Link>
                     </SidebarMenuButton>

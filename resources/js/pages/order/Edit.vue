@@ -7,12 +7,12 @@ const props = defineProps({order: Object});
 const breadcrumbs = [
     {
         title: 'Order',
-        href: route('order.index')
+        href: route('orders.index')
 
     },
     {
         title: 'Edit',
-        href: route('order.edit', props.order.id)
+        href: route('orders.edit', props.order.id)
     }
 
 ];
@@ -24,7 +24,6 @@ const form = useForm({
 const submit = () => {
     form.post(route('payment.store'));
 }
-console.log(props.auth)
 </script>
 <template>
     <Head title="Edit Order" />

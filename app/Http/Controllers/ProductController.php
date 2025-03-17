@@ -30,7 +30,7 @@ class ProductController extends Controller
         ]);
         $product->save();
 
-        return to_route('product.index')->with('message', 'Product created successfully');
+        return to_route('products.index')->with('message', 'Product created successfully');
     }
 
     public function edit(Product $product)
@@ -44,12 +44,12 @@ class ProductController extends Controller
 
         $product->update($data);
 
-        return redirect()->route('product.index')->with('message', 'Updated successfully');
+        return redirect()->route('products.index')->with('message', 'Updated successfully');
     }
-    
+
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect()->route('product.index')->with('message', 'Deleted successfully');
+        return redirect()->route('products.index')->with('message', 'Deleted successfully');
     }
 }

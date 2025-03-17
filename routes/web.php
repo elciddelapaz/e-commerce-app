@@ -11,9 +11,9 @@ Route::get('/', function () {
 })->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::resource('order', OrderController::class);
-    Route::resource('product', ProductController::class);
-    Route::post('/payment', [PaymentController::class, 'store'])->name('payment.store');
+    Route::resource('orders', OrderController::class)->only(['index', 'create', 'store', 'edit']);
+    Route::resource('products', ProductController::class)->except(['show']);
+Route::post('/paymen', [PaymentController::class, 'store'])->name('payment.store');
 });
 
 
