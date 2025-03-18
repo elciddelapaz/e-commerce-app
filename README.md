@@ -1,10 +1,9 @@
 
 # Laravel E-commerce
 
-
 ## Installation
 
-Install my-project with npm
+### Install my-project with npm
 
 ```bash
   # Clone the repo
@@ -38,3 +37,33 @@ Install my-project with npm
 
 - Email: test@example.com
 - Password: 1234
+
+## Endpoints
+### Orders
+* The `/order` endpoint let you create and manage your order
+
+| Verb | URI | Action |
+|:------|:-----:|:--------:|
+| `GET` | `/orders` | Get all products|
+| `GET` | `/orders/create` | Get the form to create an order |
+| `POST` | `/orders` | Create an order | 
+| `GET` | `/orders/{order}/edit` | Get the form to edit an order | 
+
+### Products
+* The `/products` endpoint let you create and manage your product
+
+| Verb | URI | Action |
+|:------|:-----:|:--------:|
+| `GET` | `/products` | Get all products|
+| `GET` | `/products/create` | Get the form to create an product |
+| `POST` | `/products` | Create an product | 
+| `GET` | `/products/{product}/edit` | Get the form to edit an product | 
+| `PUT` | `/products/{product}` | Update a product
+| `DELETE` |  `/products/{product}` | Delete a product
+
+### Payment
+* The `/payment` endpoint let you create a payment
+
+| Verb | URI | Action |
+|:------|:-----:|:--------:|
+| `POST` | `/payment` | Create a payment|
